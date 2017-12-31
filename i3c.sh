@@ -5,11 +5,11 @@ set -x
 	echo "args: ${args[@]:2}"
 	
 if [ "x$I3C_HOME" = "x" ]; then	
-	I3C_HOME='https://github.com/virtimus/i3c.git#develop:/';	
+	I3C_HOME='/i3c';	
 fi
 i3cHome=$I3C_HOME; #'/i3c'
 if [ "x$I3C_DATA_DIR" = "x" ]; then
-	I3C_DATA_DIR='/ic3/data';
+	I3C_DATA_DIR='/ic3-data';
 fi
 ic3DataDir=$I3C_DATA_DIR
 i3cVersion=v0
