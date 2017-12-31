@@ -13,4 +13,4 @@ services:
   trigger:
     image: franela/dind
     command: sh -c "tail -f /dev/null"
-    volumes: [ '/var/run/docker.sock:/var/run/docker.sock', '/i3c/i3c:/i3c', '/i3c/data:/data' ]
+    volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
