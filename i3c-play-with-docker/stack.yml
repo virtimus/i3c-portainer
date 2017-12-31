@@ -1,6 +1,7 @@
 # Deploy i3c demo (demo.i3c.cloud) in a play-with-docker playground
 #
 # - Go to http://play-with-docker.com/?stack=https://raw.githubusercontent.com/virtimus/i3c/i3c-demo/stack.yml
+http://play-with-docker.com/?stack=https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-play-with-docker/stack.yml
 # - Login and/or Start.
 # - Wait until 'Your session is ready!' and 'Close' modal.
 # - Refresh (if a shell is not shown).
@@ -12,4 +13,4 @@ services:
   trigger:
     image: docker:dind
     command: sh -c "cd / && git clone https://github.com/virtimus/i3c.git && ./i3c/play-with-docker/demo.sh && tail -f /dev/null"
-#    volumes: [ '/var/run/docker.sock:/var/run/docker.sock' 
+    volumes: [ '/var/run/docker.sock:/var/run/docker.sock' 
