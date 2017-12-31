@@ -1,0 +1,35 @@
+FROM alpine:latest as base
+RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates
+
+#FROM scratch
+#COPY --from=base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+
+RUN apk update \
+	&& apk upgrade \
+	&& apk add bash git yarn
+
+#COPY dist /
+
+#VOLUME /data
+
+WORKDIR /
+
+RUN cd / && git clone https://github.com/virtimus/i3c.git
+
+
+
+#ENTRYPOINT ["/portainer"]
+RUN apk add docker \
+	&& cd /i3c \
+	&& npm install grunt \
+	&& npm install -g grunt-cli \
+	&& npm install -g grunt 
+	
+RUN cd /i3c && yarn install 
+	#&& grunt build    
+	
+#EXPOSE 9000
+COPY run-loop.sh /
+RUN chmod a+x /run-loop.sh
+CMD ["/run-loop.sh"]
+
