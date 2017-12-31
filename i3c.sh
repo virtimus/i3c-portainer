@@ -11,14 +11,14 @@ i3cHome=$I3C_HOME; #'/i3c'
 if [ "x$I3C_DATA_DIR" = "x" ]; then
 	I3C_DATA_DIR='/ic3-data';
 fi
-ic3DataDir=$I3C_DATA_DIR
+i3cDataDir=$I3C_DATA_DIR
 i3cVersion=v0
 
 
 build(){
 case "$1" in	
 	i3cd)
-		docker build -t i3c/i3cd:$i3cVersion $ic3home/dockerfiles/i3cd/.
+		docker build -t i3c/i3cd:$i3cVersion $i3cHome/dockerfiles/i3cd/.
 		;;
 	*)
 			echo "Usage: $0 build ic3d|...";
@@ -30,12 +30,12 @@ run(){
 case "$1" in
 	i3cd)
 		docker run -d --name i3cd \
-		-v $ic3DataDir/i3cd:/data \
-		-v $ic3Home:/i3c \
+		-v $i3cDataDir/i3cd:/data \
+		-v $i3cHome:/i3c \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-e I3C_HOME=/i3c \
 		-e I3C_DATA_DIR=/data \
-		i3c/i3cd:$ic3Version 
+		i3c/i3cd:$i3cVersion 
 		;;			
 	*)
 			echo "Usage: $0 run i3cd|...";
