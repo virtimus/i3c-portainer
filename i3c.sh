@@ -9,7 +9,7 @@ if [ "x$I3C_HOME" = "x" ]; then
 fi
 i3cHome=$I3C_HOME; #'/i3c'
 if [ "x$I3C_DATA_DIR" = "x" ]; then
-	I3C_DATA_DIR='/ic3-data';
+	I3C_DATA_DIR='/data';
 fi
 i3cDataDir=$I3C_DATA_DIR
 i3cVersion=v0
