@@ -12,5 +12,5 @@ version: '3'
 services:
   trigger:
     image: franela/dind
-    command: sh -c "cd"
+    command: sh -c "tail -f /dev/null"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
