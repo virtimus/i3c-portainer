@@ -13,4 +13,4 @@ services:
   trigger:
     image: franela/dind
     command: sh -c "cd / && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-play-with-docker/demo.sh && tail -f /dev/null"
-    volumes: [ "/var/run/docker.sock:/var/run/docker.sock","/i3c:/i3c","/i3c-data:/data" ]
+    volumes: [ "/var/run/docker.sock:/var/run/docker.sock" ]
