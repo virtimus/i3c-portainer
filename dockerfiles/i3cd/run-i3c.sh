@@ -8,6 +8,8 @@ if [ ! -f /i3c/i3c.sh ]; then
     chmod -R a+x **/*.sh
 fi
 
+ln -s /i3c/i3c.sh /i
+
 cd /i3c
 npm install grunt
 npm install -g grunt-cli
