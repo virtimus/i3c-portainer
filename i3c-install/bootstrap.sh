@@ -15,10 +15,12 @@ fi
 
 ln -s /i3c/i3c.sh /i
 
-/i rebuild i3cd >> /log/i3cd-rebuild.log
+/i rebuild i3cd 
+#>> /log/i3cd-rebuild.log
 
-/i rerun i3cd >> /log/i3cd-rerun.log
+/i rerun i3cd 
+#>> /log/i3cd-rerun.log
 #cd $(dirname $0)
 
 exec_in() { docker exec $@; }
-exec_in i3cd "/run-i3c.sh >> /log/run-i3c.log"
+exec_in i3cd "/run-i3c.sh"
