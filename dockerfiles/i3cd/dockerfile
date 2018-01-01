@@ -18,6 +18,8 @@ WORKDIR /
    
 	
 #EXPOSE 9000
+COPY run-i3c.sh /
+RUN chmod a+x /run-i3c.sh
 COPY run-loop.sh /
 RUN chmod a+x /run-loop.sh
 CMD ["/run-loop.sh"]
