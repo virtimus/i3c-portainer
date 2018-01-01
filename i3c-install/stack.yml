@@ -16,4 +16,4 @@ services:
     image: franela/dind
     command: sh -c "cd / && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
-    restart: 'no'
+    restart: "no"
