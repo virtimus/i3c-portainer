@@ -8,4 +8,4 @@ ln -s /i3c/i3c.sh /i
 #cd $(dirname $0)
 
 exec_in() { docker exec $@; }
-exec_in i3cd "/run-i3c.sh"
+exec_in i3cd "/run-i3c.sh &"
