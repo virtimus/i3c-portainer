@@ -11,7 +11,10 @@ if [ ! -f /i3c/i3c.sh ]; then
     npm install -g grunt
 	
     cd /i3c
-    yarn install     
+    yarn install 
+    
+    cd /i3c
+    chmod -R a+x *.sh
 fi
 
     
