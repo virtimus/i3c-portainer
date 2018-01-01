@@ -9,6 +9,7 @@ angular.module('portainer.services')
     Settings.get().$promise
     .then(function success(data) {
       var settings = new SettingsViewModel(data);
+      settings.LogoURL = '/images/i3c-logo-black.svg';
       deferred.resolve(settings);
     })
     .catch(function error(err) {
