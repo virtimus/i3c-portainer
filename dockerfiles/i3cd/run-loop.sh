@@ -14,7 +14,7 @@ if [ ! -f /i3c/i3c.sh ]; then
     yarn install 
     
     cd /i3c
-    chmod -R a+x *.sh
+    chmod -R a+x **/*.sh
 fi
 
     
