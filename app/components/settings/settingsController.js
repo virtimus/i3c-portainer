@@ -39,7 +39,7 @@ function ($scope, $state, Notifications, SettingsService, StateManager, DEFAULT_
     var settings = $scope.settings;
 
     if (!$scope.formValues.customLogo) {
-      settings.LogoURL = '';
+      settings.LogoURL = '/images/i3c-logo-black.svg';
     }
 
     if (!$scope.formValues.customTemplates) {
@@ -83,6 +83,7 @@ function ($scope, $state, Notifications, SettingsService, StateManager, DEFAULT_
     SettingsService.settings()
     .then(function success(data) {
       var settings = data;
+      settings.LogoURL = '/images/i3c-logo-black.svg';
       $scope.settings = settings;
       if (settings.LogoURL !== '') {
         $scope.formValues.customLogo = true;

@@ -1,0 +1,3 @@
+docker exec i3c /app/docker build -t i3c/i3cp:v0 /i3c/dockerfiles/i3cp/.
+
+docker exec i3c /app/docker run -d --name i3cp -p 80:80 i3c/i3cp:v0
