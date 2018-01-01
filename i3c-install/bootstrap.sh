@@ -1,5 +1,7 @@
 #!/bin/sh
-
+echo "------------------------------------------------------------------------"
+echo "Runing: i3c-install/bootstrap.sh ..."
+echo "------------------------------------------------------------------------"
 CONTAINER=i3cd
 RUNNING=$(docker inspect --format="{{.State.Running}}" $CONTAINER 2> /dev/null)
 
@@ -23,4 +25,8 @@ ln -s /i3c/i3c.sh /i
 #cd $(dirname $0)
 
 exec_in() { docker exec $@; }
-exec_in i3cd "/run-i3c.sh >> /log/run-i3c.log"
+exec_in i3cd "/run-i3c.sh"
+
+echo "------------------------------------------------------------------------"
+echo "End: i3c-install/bootstrap.sh ..."
+echo "------------------------------------------------------------------------"
