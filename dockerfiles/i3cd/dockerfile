@@ -10,13 +10,13 @@ RUN apk update \
 
 #COPY dist /
 
-#VOLUME /data
+VOLUME /i3c
 
 WORKDIR /
 
-RUN cd / && git clone https://github.com/virtimus/i3c.git
-
-
+COPY clone-i3c.sh /
+RUN chmod a+x /clone-i3c.sh
+RUN /clone-i3c.sh 
 
 #ENTRYPOINT ["/portainer"]
 RUN apk add docker \
