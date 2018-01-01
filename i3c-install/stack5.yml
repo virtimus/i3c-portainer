@@ -6,6 +6,9 @@
 # - Wait until 'Your session is ready!' and 'Close' modal.
 # - Refresh (if a shell is not shown).
 # - Wait until a link with text '80' is shown. It is the link to the demo.
+# In case of problems check bootstrap logs:
+# - /var/log/bootstrap.log - log from install/build
+# - /log/grunt-run-dev.log - log from run-dev (i3c container startup)
 # - Visit https://github.com/virtimus/i3c to check default credentials (admin/i3cadmin)
 # 
 # reference: https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
