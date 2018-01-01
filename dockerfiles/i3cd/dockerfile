@@ -6,7 +6,7 @@ RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates
 
 RUN apk update \
 	&& apk upgrade \
-	&& apk add bash git yarn
+	&& apk add bash git yarn docker
 
 #COPY dist /
 
@@ -14,19 +14,8 @@ VOLUME /i3c
 
 WORKDIR /
 
-COPY clone-i3c.sh /
-RUN chmod a+x /clone-i3c.sh
-RUN /clone-i3c.sh 
-
 #ENTRYPOINT ["/portainer"]
-RUN apk add docker \
-	&& cd /i3c \
-	&& npm install grunt \
-	&& npm install -g grunt-cli \
-	&& npm install -g grunt 
-	
-RUN cd /i3c && yarn install 
-	#&& grunt build    
+   
 	
 #EXPOSE 9000
 COPY run-loop.sh /
