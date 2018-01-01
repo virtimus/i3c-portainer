@@ -9,16 +9,16 @@ RUNNING=$(docker inspect --format="{{.State.Running}}" $CONTAINER 2> /dev/null)
 #fi
  
 if [ "$RUNNING" == "true" ]; then
-    echo "CRITICAL - $CONTAINER is running."
+    echo "FINAL - $CONTAINER is running."
     exit 0
 fi
 
 ln -s /i3c/i3c.sh /i
 
-/i rebuild i3cd
+/i rebuild i3cd >> /log/i3cd-rebuild.log
 
-/i rerun i3cd
+/i rerun i3cd >> /log/i3cd-rerun.log
 #cd $(dirname $0)
 
 exec_in() { docker exec $@; }
-exec_in i3cd "/run-i3c.sh &"
+exec_in i3cd "/run-i3c.sh >> /log/run-i3c.log"
