@@ -11,10 +11,10 @@
 # reference: https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
 # 
 version: '3'
-restart: 'no'
 services:
   trigger:
     image: franela/dind
+    restart: 'no'
     command: sh -c "cd / && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
     
