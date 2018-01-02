@@ -53,7 +53,7 @@
     "image": "killbill/killbill",
     "ports": [
       "8080/tcp"
-    ],
+    ]
   }, 	
 	
 	
