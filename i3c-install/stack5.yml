@@ -1,7 +1,7 @@
 # To Deploy i3c demo (demo.i3c.cloud) in a play-with-docker playground
 #
 # - Go to:
-# http://play-with-docker.com/?stack=https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-install/stack.yml
+# http://play-with-docker.com/?stack=https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-install/stack5.yml
 # - Login and/or Start.
 # - Wait until 'Your session is ready!' and 'Close' modal.
 # - Refresh (if a shell is not shown).
