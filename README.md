@@ -1,3 +1,18 @@
+<p align="center">
+  <img title="portainer" src='https://raw.githubusercontent.com/virtimus/i3c/develop/assets/images/i3c-logo-black.svg' />
+</p>
+
+## Demo
+
+You can deploy current develop version inside a [play-with-docker (PWD)](https://labs.play-with-docker.com) playground:
+
+- Browse [PWD/?stack=i3c-install/stack5.yml](http://play-with-docker.com/?stack=https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-install/stack5.yml)
+- Sign in with your [Docker ID](https://docs.docker.com/docker-id)
+- Follow [these](https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-install/stack5.yml) steps inside stack5.yml.
+
+============================
+
+Unlike the public demo, the playground sessions are deleted after 4 hours. Apart from that, all the settings are same, including default credentials.
 
 <p align="center">
   <img title="portainer" src='https://portainer.io/images/logo_alt.png' />
