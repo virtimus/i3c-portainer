@@ -41,7 +41,22 @@
     ],
     "volumes": ["/var/lib/docker"],
     "privileged": true
-  },  
+  }, 
+	
+  {
+    "type": "container",
+    "title": "Kill Bill",
+    "description": "i3c.cloud Billing",
+    "categories": ["docker"],
+    "platform": "linux",
+    "logo": "https://secure.gravatar.com/avatar/10c4d94324c7204beb44a009cc5e8e29.jpg?s=80&r=g&d=mm",
+    "image": "killbill/killbill",
+    "ports": [
+      "8080/tcp"
+    ],
+  }, 	
+	
+	
   {
     "type": "container",
     "title": "Registry",
