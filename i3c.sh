@@ -4,20 +4,10 @@ set -x
 	args=("$@")
 	echo "args: ${args[@]:2}"
 	
-if [ "x$I3C_HOME" = "x" ]; then	
-	I3C_HOME='/i3c';	
-fi
-i3cHome=$I3C_HOME; #'/i3c'
-if [ "x$I3C_DATA_DIR" = "x" ]; then
-	I3C_DATA_DIR='/data';
-fi
-i3cDataDir=$I3C_DATA_DIR
 
-if [ "x$I3C_LOG_DIR" = "x" ]; then
-	I3C_LOG_DIR='/log';
-fi
-i3cLogDir=$I3C_LOG_DIR
-
+i3cDataDir='/i3c/data'
+i3cHome='/i3c/i3c'; #'/i3c'
+i3cLogDir='/i3c/log'
 i3cVersion=v0
 
 build(){
@@ -36,10 +26,10 @@ case "$1" in
 	i3cd)
 		docker run -d --name i3cd \
 		-v $i3cDataDir/i3cd:/data \
-		-v $i3cHome:/i3c \
+		-v $i3cHome:$i3cHome \
 		-v $i3cLogDir:/log \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-e I3C_HOME=/i3c \
+		-e I3C_HOME=$i3cHome \
 		-e I3C_DATA_DIR=/data \
 		-e I3C_LOG_DIR=/log \
 		i3c/i3cd:$i3cVersion 

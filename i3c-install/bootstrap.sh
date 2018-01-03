@@ -15,7 +15,9 @@ if [ "$RUNNING" == "true" ]; then
     exit 0
 fi
 
-ln -s /i3c/i3c.sh /i
+i3cHome='/i3c/i3c';	
+
+ln -s $i3cHome/i3c.sh /i
 
 echo "-------------------------"
 echo "/i rebuild i3cd ..."
