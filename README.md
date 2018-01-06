@@ -22,6 +22,12 @@ curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | 
 ```
 ## Installation as local i3c.Cloud endpoint
 ... to be done
+### Windows
+...
+### Linux
+...
+### Android
+...
 ============================
 
 Unlike the public demo, the playground sessions are deleted after 4 hours. Apart from that, all the settings are same, including default credentials.
