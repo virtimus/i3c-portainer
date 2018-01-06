@@ -18,7 +18,7 @@ mkdir /i3c/data
 cd /i3c
 git clone https://github.com/virtimus/i3c.git
 cd i3c
-./i3c-install/bootstrap.sh >> ./../log/bootstrap.log &
+nohup ./i3c-install/bootstrap.sh > ./../log/bootstrap.log 2>&1 &
 
 echo "------------------------------------------------------------------------"
 echo "Started: i3c/bootstrap.sh. Look at /i3c/log/bootstrap.log for results."
