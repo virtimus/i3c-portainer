@@ -11,15 +11,16 @@ You can deploy current develop version inside a [play-with-docker (PWD)](https:/
 - Follow [these](https://raw.githubusercontent.com/virtimus/i3c/develop/i3c-install/stack5.yml) steps inside stack5.yml.
 
 
-## Local "from scratch" installation (bootstrap)
+## Installation "from scratch" as full i3c platform master node (local/bootstrap)
 - Make sure there are bash/git/curl/docker installed but no container is running
 - Remove or backup /i3c root dir (or at least make it empty)
-- run this script:
+- You can create symbolic links for /i3c/log and /i3c/data subforlders as they can grow big ....
+- Run main bootstrap script:
 ```bash
 curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | bash
 ```
-
-
+## Registering as local endpoint
+... to be done
 ============================
 
 Unlike the public demo, the playground sessions are deleted after 4 hours. Apart from that, all the settings are same, including default credentials.
