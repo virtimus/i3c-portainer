@@ -11,6 +11,8 @@ if [ "$RUNNING" == "true" ]; then
 fi
 
 mkdir /i3c
+mkdir /i3c/log
+mkdir /i3c/data
 cd /i3c
 git clone https://github.com/virtimus/i3c.git
 cd i3c
