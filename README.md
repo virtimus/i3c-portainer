@@ -1,5 +1,5 @@
 <p align="center">
-  <img title="i3c.Cloud" src="https://raw.githubusercontent.com/virtimus/i3c/develop/assets/images/i3c-logo-black.svg?sanitize=true">
+  <img title="i3c.Cloud" width="155px" height="55px" src="https://raw.githubusercontent.com/virtimus/i3c/develop/assets/images/i3c-logo-black.svg?sanitize=true">
 </p>
 
 ## Demo
