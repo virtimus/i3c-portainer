@@ -19,7 +19,7 @@ You can deploy current develop version inside a [play-with-docker (PWD)](https:/
 ```bash
 curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | bash
 ```
-## Registering as local endpoint
+## Installation as local i3c.Cloud endpoint
 ... to be done
 ============================
 
