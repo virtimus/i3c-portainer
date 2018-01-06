@@ -12,6 +12,7 @@ You can deploy current develop version inside a [play-with-docker (PWD)](https:/
 
 
 ## Installation "from scratch" as full i3c.Cloud platform master node (local/bootstrap)
+- Linux os platform only
 - Make sure there are bash/git/curl/docker installed but no container is running
 - Remove or backup /i3c root dir (or at least make it empty)
 - You can create symbolic links for /i3c/log and /i3c/data subforlders as they can grow big ....
