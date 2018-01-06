@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "------------------------------------------------------------------------"
-echo "Runing: i3c/bootstrap.sh ..."
+echo "Start: i3c/bootstrap.sh ..."
 echo "------------------------------------------------------------------------"
 CONTAINER=i3cd
 RUNNING=$(docker inspect --format="{{.State.Running}}" $CONTAINER 2> /dev/null)
@@ -14,8 +14,8 @@ mkdir /i3c
 cd /i3c
 git clone https://github.com/virtimus/i3c.git
 cd i3c
-./i3c-install/bootstrap.sh
+./i3c-install/bootstrap.sh >> ./../log/bootstrap.log &
 
 echo "------------------------------------------------------------------------"
-echo "Ended: i3c/bootstrap.sh ."
+echo "Started: i3c/bootstrap.sh. Look at /i3c/log/bootstrap.log for results."
 echo "------------------------------------------------------------------------"
