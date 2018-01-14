@@ -16,7 +16,7 @@ You can quickly deploy current develop version inside a "play-with-docker" (PWD)
     - install "Docker Toolbox" and "Bash on Ubuntu on Windows" (lxrun /install /yLinux) 
     - add host connection to bash profile (replacing "virtimus" with Your username and ip of docker host if needed):
     ```bash
-    echo "export DOCKER_HOST='tcp://0.0.0.0:2376'" >> ~/.bashrc
+    echo "export DOCKER_HOST='tcp://192.168.99.100:2376'" >> ~/.bashrc
     echo "export DOCKER_CERT_PATH='/mnt/c/Users/virtimus/.docker/machine/machines/default'" >> ~/.bashrc
     echo "export DOCKER_TLS_VERIFY=1" >> ~/.bashrc
     ```  
