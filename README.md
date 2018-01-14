@@ -42,6 +42,9 @@ curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | 
 tail -f /i3c/log/bootstrap.log
 ```
 
+- at the end You should have container i3cd/i3c running (docker ps)
+- backend i3c UI available at [hostIp]:9000 (localhost:9000 or 192.168.99.100:9000)
+
 
 ## Installation as local i3c.Cloud endpoint
 ... to be done
