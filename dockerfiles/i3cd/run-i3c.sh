@@ -18,7 +18,7 @@ npm install -g grunt-cli
 npm install -g grunt
 	
 cd $i3cHome
-yarn install 
+yarn install --no-bin-links
 
 cd $i3cHome 
 grunt run-dev >> /log/grunt-run-dev.log &
