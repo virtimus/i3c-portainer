@@ -44,7 +44,7 @@ tail -f /i3c/log/bootstrap.log
 
 - ... and runing backend ui:
 ```bash
-tail -f grunt-run-dev.log
+tail -f /i3c/log/grunt-run-dev.log ("Waiting..." line means success)
 ```
 
 - at the end You should have container i3cd/i3c running (docker ps)
