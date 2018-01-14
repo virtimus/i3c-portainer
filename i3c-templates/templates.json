@@ -10,7 +10,7 @@
 		    "ports": [
 		      "80/tcp",
 		      "443/tcp"	
-		    ],
+		    ]
 		  },
 	  {
 		    "type": "container",
