@@ -21,7 +21,7 @@ You can quickly deploy current develop version inside a "play-with-docker" (PWD)
     echo "export DOCKER_TLS_VERIFY=1" >> ~/.bashrc
     ```  
 - Next steps are common for Windows/Linux:    
-- Make sure there are bash/git/curl/docker installed but no container is running (docker ps)
+- Make sure there are bash/git/curl/docker installed but no i3c* container is running (docker ps)
 - Remove or backup /i3c root dir (or at least make it empty)
 - You can create symbolic links for whole /i3c or /i3c/log and /i3c/data subfolders as they can grow big ....
 ie (for BUOW):
