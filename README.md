@@ -47,7 +47,7 @@ tail -f /i3c/log/bootstrap.log
 tail -f /i3c/log/grunt-run-dev.log ("Waiting..." line means success)
 ```
 
-- at the end You should have container i3cd/i3c running (docker ps)
+- at the end You should have containers i3cd/i3c running (docker ps)
 - backend i3c UI available at [hostIp]:9000 (localhost:9000 or 192.168.99.100:9000)
 
 
