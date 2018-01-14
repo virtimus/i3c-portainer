@@ -1,4 +1,8 @@
-FROM node:carbon
+FROM i3c/base/alpine
+
+#RUN apk add util-linux
+
+RUN yarn global add loopback-cli
 
 COPY run.sh /
 RUN chmod a+x /run.sh

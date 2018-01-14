@@ -36,7 +36,7 @@ function ($scope, $transition$, Container, Image, EndpointProvider, Notification
 
   $scope.connect = function() {
     var termWidth = Math.floor(($('#terminal-container').width() - 20) / 8.39);
-    var termHeight = 30;
+    var termHeight = 28;
     var command = $scope.formValues.isCustomCommand ?
                     $scope.formValues.customCommand : $scope.formValues.command;
     var execConfig = {

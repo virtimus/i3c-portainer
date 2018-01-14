@@ -9,14 +9,15 @@ i3cDataDir='/i3c/data'
 i3cHome='/i3c/i3c'; #'/i3c'
 i3cLogDir='/i3c/log'
 i3cVersion=v0
+i3cDfDir=$i3cHome/dockerfiles
 
 build(){
 case "$1" in	
 	i3cd)
-		docker build -t i3c/i3cd:$i3cVersion $i3cHome/dockerfiles/i3cd/.
+		docker build -t i3c/i3cd:$i3cVersion $i3cDfDir/i3cd/.
 		;;
 	*)
-			echo "Usage: $0 build ic3d|...";
+		docker build -t i3c/$1:$i3cVersion -t i3c/$1:latest $i3cDfDir/$1/.
 esac
 
 }
@@ -35,7 +36,7 @@ case "$1" in
 		i3c/i3cd:$i3cVersion 
 		;;			
 	*)
-			echo "Usage: $0 run i3cd|...";
+		. $i3cDfDir/$1/i3c-run.sh;
 esac
 }
 
@@ -46,7 +47,7 @@ case "$1" in
 		docker rm i3cd
 		;;			
 	*)
-			echo "Usage: $0 rm i3cd|...";
+		docker rm $1;
 esac
 }
 
@@ -64,7 +65,7 @@ case "$1" in
 		docker start i3cd
 		;;		
 	*)
-		echo "Usage: $0 start i3cd|...";
+		docker start $1;
 esac
 }
 
@@ -74,7 +75,7 @@ case "$1" in
 		docker stop i3cd
 		;;		
 	*)
-		echo "Usage: $0 stop i3cd|...";
+		docker stop $1;
 esac
 }
 
@@ -96,7 +97,17 @@ case "$1" in
 		docker exec -it i3cd $2
 		;;		
 	*)
-		echo "Usage: $0 exec i3cd|...";
+		docker exec -it $1 ${@:2};
+esac
+}
+
+exe(){
+case "$1" in
+	i3cd)
+		docker exec i3cd $2
+		;;		
+	*)
+		echo "docker exec $1 ${@:2}";
 esac
 }
 
@@ -142,14 +153,18 @@ case "$1" in
 		ip $2;
 		;;
 	exec)
-		exec $2 $3 $4 $5 $6 $7 $8 $9;
-		;;			
+		exec ${@:2};
+		;;	
+	exe)
+		exe ${@:2};
+		;;					
 	logs)
 		logs $2;
 		;;
 	
 	*)
-			echo "Usage: $0 build|run|runb|start|stop|rm|psa|rmi|rebuild|rerun|pid|ip|exec|logs...";
+			echo "Usage: $0 build|run|runb|start|stop|rm|psa|rmi|rebuild|rerun|pid|ip|exec|exe|logs|help...";
+			echo "Help with command: $0 help [commmand]";
 esac
  	
 
