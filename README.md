@@ -12,10 +12,22 @@ You can deploy current develop version inside a [play-with-docker (PWD)](https:/
 
 
 ## Installation "from scratch" as full i3c.Cloud platform master node (local/bootstrap)
-- Linux os platform only
-- Make sure there are bash/git/curl/docker installed but no container is running
+- For Windows you need first to build a Linux/Docker/Bash environment: 
+    - install "Docker Toolbox" and "Bash on Ubuntu on Windows" (lxrun /install /yLinux) 
+    - add host connection to bash profile (replacing "virtimus" with Your username and ip of docker host if needed):
+    ```bash
+    echo "export DOCKER_HOST='tcp://0.0.0.0:2376'" >> ~/.bashrc
+    echo "export DOCKER_CERT_PATH='/mnt/c/Users/virtimus/.docker/machine/machines/default'" >> ~/.bashrc
+    echo "export DOCKER_TLS_VERIFY=1" >> ~/.bashrc
+    ```  
+- Next steps are common for Windows/Linux:    
+- Make sure there are bash/git/curl/docker installed but no container is running (docker ps)
 - Remove or backup /i3c root dir (or at least make it empty)
-- You can create symbolic links for /i3c/log and /i3c/data subforlders as they can grow big ....
+- You can create symbolic links for whole /i3c or /i3c/log and /i3c/data subfolders as they can grow big ....
+ie (for BUOW):
+```bash
+ln -s /mnt/c/i3cRoot /i3c
+```
 - Run main bootstrap script:
 ```bash
 curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | bash
