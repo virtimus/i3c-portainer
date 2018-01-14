@@ -42,6 +42,11 @@ curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | 
 tail -f /i3c/log/bootstrap.log
 ```
 
+- ... and runing backend ui:
+```bash
+tail -f grunt-run-dev.log
+```
+
 - at the end You should have container i3cd/i3c running (docker ps)
 - backend i3c UI available at [hostIp]:9000 (localhost:9000 or 192.168.99.100:9000)
 
