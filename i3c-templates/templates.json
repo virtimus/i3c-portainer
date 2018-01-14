@@ -1,6 +1,19 @@
 [ 
 	  {
 		    "type": "container",
+		    "title": "i3c-nodejs-carbon",
+		    "description": "i3c.cloud API Dev Server",
+		    "categories": ["docker"],
+		    "platform": "linux",
+		    "logo": "https://cloudinovasi.id/assets/img/logos/registry.png",
+		    "image": "/dockerfiles/i3ca/.",
+		    "ports": [
+		      "80/tcp",
+		      "443/tcp"	
+		    ],
+		  },
+	  {
+		    "type": "container",
 		    "title": "i3c-proxy",
 		    "description": "i3c.cloud Web Proxy Server",
 		    "categories": ["docker"],

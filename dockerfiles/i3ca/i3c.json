@@ -1,0 +1,6 @@
+{
+	container: {
+		name: "i3ca"
+	}
+	description: "i3c REST API"
+}
