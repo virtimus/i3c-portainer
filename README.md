@@ -36,6 +36,13 @@ ln -s /mnt/c/i3cRoot /i3c
 ```bash
 curl -sSL https://raw.githubusercontent.com/virtimus/i3c/develop/bootstrap.sh | bash
 ```
+- monitor installation progress:
+
+```bash
+tail -f /i3c/log/bootstrap.log
+```
+
+
 ## Installation as local i3c.Cloud endpoint
 ... to be done
 ### Windows
