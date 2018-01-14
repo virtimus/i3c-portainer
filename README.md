@@ -19,7 +19,11 @@ You can quickly deploy current develop version inside a "play-with-docker" (PWD)
     echo "export DOCKER_HOST='tcp://192.168.99.100:2376'" >> ~/.bashrc
     echo "export DOCKER_CERT_PATH='/mnt/c/Users/virtimus/.docker/machine/machines/default'" >> ~/.bashrc
     echo "export DOCKER_TLS_VERIFY=1" >> ~/.bashrc
-    ```  
+    ```
+    - run VirtualBox and add shared folder to "default" (docker host) machine: 
+    c:/i3cRoot -> i3c -> automatic mount, persistent 
+    - restart docker toolbox
+    
 - Next steps are common for Windows/Linux:    
 - Make sure there are bash/git/curl/docker installed but no i3c* container is running (docker ps)
 - Remove or backup /i3c root dir (or at least make it empty)
