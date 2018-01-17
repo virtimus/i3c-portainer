@@ -26,7 +26,7 @@ You can quickly deploy current develop version inside a "play-with-docker" (PWD)
     
 - Next steps are common for Windows/Linux:    
 - Make sure there are bash/git/curl/docker installed but no i3c* container is running (docker ps)
-- Remove or backup /i3c root dir (or at least make it empty)
+- Backup and clean /i3c root dir (or at least make dir /i3c/i3c empty)
 - You can create symbolic links for whole /i3c or /i3c/log and /i3c/data subfolders as they can grow big ....
 ie (for BUOW):
 ```bash
@@ -47,7 +47,7 @@ tail -f /i3c/log/bootstrap.log
 tail -f /i3c/log/grunt-run-dev.log ("Waiting..." line means success)
 ```
 
-- at the end You should have containers i3cd/i3c running (docker ps)
+- at the end You should have containers i3cd/i3c/i3cp running (docker ps)
 - backend i3c UI available at [hostIp]:9000 (localhost:9000 or 192.168.99.100:9000)
 
 
