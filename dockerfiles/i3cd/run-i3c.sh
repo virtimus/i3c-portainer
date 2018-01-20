@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo 'run-i3c start ...'
 i3cHome='/i3c/i3c';	
 
 if [ ! -f $i3cHome/i3c.sh ]; then  
