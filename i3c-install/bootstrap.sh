@@ -20,6 +20,10 @@ i3cHome='/i3c/i3c';
 ln -s $i3cHome/i3c.sh /i
 
 echo "-------------------------"
+echo "/i rebuild base/alpine ..."
+/i rebuild base/alpine
+
+echo "-------------------------"
 echo "/i rebuild i3c ..."
 /i rebuild i3c
 
