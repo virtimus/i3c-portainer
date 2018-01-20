@@ -21,7 +21,7 @@ ln -s $i3cHome/i3c.sh /i
 
 echo "-------------------------"
 echo "/i rebuild i3cp ..."
-/i rebuild i3cp
+/i build i3cp
 
 echo "-------------------------"
 echo "/i rerun i3cp ..."
@@ -29,7 +29,7 @@ echo "/i rerun i3cp ..."
 
 echo "-------------------------"
 echo "/i rebuild i3cd ..."
-/i rebuild i3cd 
+/i build i3cd 
 #>> /log/i3cd-rebuild.log
 
 echo "-------------------------"
