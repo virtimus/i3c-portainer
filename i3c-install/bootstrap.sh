@@ -25,7 +25,7 @@ echo "/i rebuild i3cp ..."
 
 echo "-------------------------"
 echo "/i rerun i3cp ..."
-/i rerun i3cp 
+/i run i3cp 
 
 echo "-------------------------"
 echo "/i rebuild i3cd ..."
@@ -34,7 +34,7 @@ echo "/i rebuild i3cd ..."
 
 echo "-------------------------"
 echo "/i rerun i3cd ..."
-/i rerun i3cd 
+/i run i3cd 
 #>> /log/i3cd-rerun.log
 #cd $(dirname $0)
 
