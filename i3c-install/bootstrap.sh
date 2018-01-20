@@ -33,7 +33,7 @@ echo "/i rebuild i3cp ..."
 /i rebuild i3cp
 
 if [ ! "x$PWD_SESSION_ID" = "x" ]; then
-  exHostIp=$(/i ip i3cp);
+  exHostIp=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' i3cp);
   exHostUrl='ip'$exHostIp'-'$PWD_SESSION_ID'-80.direct.labs.play-with-docker.com'
   echo 'exHostURL:'$exHostUrl
   exit 0
