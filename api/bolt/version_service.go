@@ -5,7 +5,8 @@ import (
 
 	"github.com/portainer/portainer"
 
-	"github.com/boltdb/bolt"
+	//"github.com/boltdb/bolt"
+	"github.com/coreos/bbolt"
 )
 
 // VersionService represents a service to manage stored versions.

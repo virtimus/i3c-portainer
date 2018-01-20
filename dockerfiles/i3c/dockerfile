@@ -1,0 +1,7 @@
+#FROM portainer/base
+FROM i3c/base/alpine
+RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates
+
+COPY run-loop.sh /
+RUN chmod a+x /run-loop.sh
+CMD ["/run-loop.sh"]

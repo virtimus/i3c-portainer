@@ -1,7 +1,8 @@
 package bolt
 
 import (
-	"github.com/boltdb/bolt"
+	//"github.com/boltdb/bolt"
+	"github.com/coreos/bbolt"
 	"github.com/portainer/portainer"
 )
 

@@ -12,6 +12,8 @@ fi
 
 ln -s $i3cHome/i3c.sh /i
 
+/i rebuild i3c
+
 cd $i3cHome
 npm install grunt
 npm install -g grunt-cli

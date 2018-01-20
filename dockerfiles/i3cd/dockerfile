@@ -8,6 +8,10 @@ RUN apk update \
 	&& apk upgrade \
 	&& apk add bash git yarn docker
 
+#docker-compose
+RUN apk add py-pip \
+	&& pip install docker-compose
+
 #COPY dist /
 
 VOLUME /i3c

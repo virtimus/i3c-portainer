@@ -20,12 +20,12 @@ func initCLI() *portainer.CLIFlags {
 	var cli portainer.CLIService = &cli.Service{}
 	flags, err := cli.ParseFlags(portainer.APIVersion)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F1 %s",err)
 	}
 
 	err = cli.ValidateFlags(flags)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F2 %s",err)
 	}
 	return flags
 }
@@ -33,7 +33,7 @@ func initCLI() *portainer.CLIFlags {
 func initFileService(dataStorePath string) portainer.FileService {
 	fileService, err := file.NewService(dataStorePath, "")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F3 %s",err)
 	}
 	return fileService
 }
@@ -41,17 +41,17 @@ func initFileService(dataStorePath string) portainer.FileService {
 func initStore(dataStorePath string) *bolt.Store {
 	store, err := bolt.NewStore(dataStorePath)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F4 %s",err, dataStorePath)
 	}
 
 	err = store.Open()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F5 %s",err, dataStorePath)
 	}
 
 	err = store.MigrateData()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F6 %s",err)
 	}
 	return store
 }
@@ -64,7 +64,7 @@ func initJWTService(authenticationEnabled bool) portainer.JWTService {
 	if authenticationEnabled {
 		jwtService, err := jwt.NewService()
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F7 %s",err)
 		}
 		return jwtService
 	}
@@ -91,7 +91,7 @@ func initEndpointWatcher(endpointService portainer.EndpointService, externalEnpo
 		endpointWatcher := cron.NewWatcher(endpointService, syncInterval)
 		err := endpointWatcher.WatchEndpointFile(externalEnpointFile)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F8 %s",err)
 		}
 	}
 	return authorizeEndpointMgmt
@@ -163,7 +163,7 @@ func initSettings(settingsService portainer.SettingsService, flags *portainer.CL
 func retrieveFirstEndpointFromDatabase(endpointService portainer.EndpointService) *portainer.Endpoint {
 	endpoints, err := endpointService.Endpoints()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F99 %s",err)
 	}
 	return &endpoints[0]
 }
@@ -190,20 +190,22 @@ func main() {
 
 	err := initSettings(store.SettingsService, flags)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F10 %s",err)
 	}
 
 	err = initDockerHub(store.DockerHubService)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F11 %s",err)
 	}
 
 	applicationStatus := initStatus(authorizeEndpointMgmt, flags)
+	
+	log.Printf("Starting Portainer1");
 
 	if *flags.Endpoint != "" {
 		endpoints, err := store.EndpointService.Endpoints()
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F12 %s",err)
 		}
 		if len(endpoints) == 0 {
 			endpoint := &portainer.Endpoint{
@@ -221,7 +223,7 @@ func main() {
 			}
 			err = store.EndpointService.CreateEndpoint(endpoint)
 			if err != nil {
-				log.Fatal(err)
+				log.Fatal("F13 %s",err)
 			}
 		} else {
 			log.Println("Instance already has defined endpoints. Skipping the endpoint defined via CLI.")
@@ -232,11 +234,11 @@ func main() {
 	if *flags.AdminPasswordFile != "" {
 		content, err := fileService.GetFileContent(*flags.AdminPasswordFile)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F15 %s",err)
 		}
 		adminPasswordHash, err = cryptoService.Hash(content)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F16 %s",err)
 		}
 	} else if *flags.AdminPassword != "" {
 		adminPasswordHash = *flags.AdminPassword
@@ -245,7 +247,7 @@ func main() {
 	if adminPasswordHash != "" {
 		users, err := store.UserService.UsersByRole(portainer.AdministratorRole)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("F17 %s",err)
 		}
 
 		if len(users) == 0 {
@@ -257,7 +259,7 @@ func main() {
 			}
 			err := store.UserService.CreateUser(user)
 			if err != nil {
-				log.Fatal(err)
+				log.Fatal("F18 %s",err)
 			}
 		} else {
 			log.Println("Instance already has an administrator user defined. Skipping admin password related flags.")
@@ -293,6 +295,6 @@ func main() {
 	log.Printf("Starting Portainer %s on %s", portainer.APIVersion, *flags.Addr)
 	err = server.Start()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("F19 %s",err)
 	}
 }

@@ -261,10 +261,16 @@ function shell_buildBinary(p, a) {
 }
 
 function shell_run(arch) {
-  return [
-    'docker rm -f i3c',
-    'docker run -d -p 9000:9000 -v $(pwd):/i3c -v $(pwd)/dist:/app -v /tmp/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock:z --name i3c portainer/base /app/portainer-linux-' + arch + ' --no-analytics'
-  ].join(';');
+ //console.log('docker run -d -p 9000:9000 -v $(pwd):/i3c -v $(pwd)/dist:/app -v /tmp/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock:z --name i3c portainer/base /app/portainer-linux-' + arch + ' --no-analytics');	
+ // return [
+ //   'docker rm -f i3c',
+ //   'docker run -d -p 9000:9000 -v $(pwd):/i3c -v $(pwd)/dist:/app -v /tmp/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock:z --name i3c portainer/base /app/portainer-linux-' + arch + ' --no-analytics'
+ // ].join(';');
+	var i3c_command = '/app/portainer-linux-' + arch+' --no-analytics -d /data';
+ return [
+	 'docker rm -f i3c',
+	 '/i run i3c '+i3c_command
+ ].join(';');   
 }
 
 function shell_downloadDockerBinary(p, a) {

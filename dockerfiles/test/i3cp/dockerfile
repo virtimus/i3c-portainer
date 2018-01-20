@@ -1,0 +1,12 @@
+FROM nginx:latest
+
+#https://github.com/Nexosis/nginxregistration
+#https://github.com/airbnb/smartstack-cookbook
+
+RUN apt-get update && apt-get install -y procps
+# noop
+#CMD ["nginx", "-g", "daemon off;"]
+COPY nginx.conf /nginx.conf
+COPY run.sh /
+RUN chmod a+x /run.sh
+CMD ["/run.sh"]

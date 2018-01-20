@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [ ! -f /etc/nginx/nginx.conf ]; then  
-  cp /nginx.conf /etc/nginx/nginx.conf
-fi
+dnsmasq
 
-echo "Starting nginx...."
-
-nginx -g "daemon off;"
+forego start -r

@@ -4,7 +4,8 @@ import (
 	"github.com/portainer/portainer"
 	"github.com/portainer/portainer/bolt/internal"
 
-	"github.com/boltdb/bolt"
+	//"github.com/boltdb/bolt"
+	"github.com/coreos/bbolt"
 )
 
 // UserService represents a service for managing users.
