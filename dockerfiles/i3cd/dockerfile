@@ -9,8 +9,8 @@ RUN apk update \
 	&& apk add bash git yarn docker
 
 #docker-compose
-RUN apk add py-pip \
-	&& pip install docker-compose
+#RUN apk add py-pip \
+#	&& pip install docker-compose
 
 #COPY dist /
 
