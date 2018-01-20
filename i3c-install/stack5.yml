@@ -12,12 +12,13 @@
 # - Visit https://github.com/virtimus/i3c to check default credentials (admin/i3cadmin)
 # 
 # reference: https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
-# 
+# export PWD_HOST_IP=$(ip -f inet -o addr show eth1 | awk '{print $4}'|sed 's:/[^/]*$::')
 version: '3'
 services:
   trigger:
     environment:
       PWD_SESSION_ID: ${SESSION_ID}
+      PWD_HOST_IP: ${PWD_HOST_IP}
     image: franela/dind
     command: sh -c "cd / && mkdir /i3c && cd /i3c && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh >> /log/bootstrap.log 2>&1 && tail -f /dev/null"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock','/var/log:/log' ]
