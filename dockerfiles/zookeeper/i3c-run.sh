@@ -13,6 +13,6 @@ docker run -d --name $cName \
 		-e I3C_HOME=/i3c \
 		-e I3C_DATA_DIR=/data \
 		-e I3C_LOG_DIR=/log \
-		-e VIRTUAL_HOST=$cName.$i3cHost \
+		-e VIRTUAL_HOST=$cName.$i3cInHost,$cName.$i3cExHost \
 		-e VIRTUAL_PORT=2181 \
 		i3c/$iName:$i3cVersion
