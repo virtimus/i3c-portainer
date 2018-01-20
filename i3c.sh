@@ -5,6 +5,8 @@ set -x
 	echo "args: ${args[@]:2}"
 	
 i3cHost=i3c.l
+i3cInHost=i3c.l
+i3cExHost=i3c.h
 #i3cHostIp=$(/sbin/ip route|awk '/default/ { print $3 }');	
 i3cRoot='/i3c'
 i3cDataDir=$i3cRoot'/data'
