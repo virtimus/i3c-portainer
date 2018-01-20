@@ -35,7 +35,7 @@ esac
 build(){
 case "$1" in	
 	i3cd)
-		docker build -t i3c/i3cd:$i3cVersion $i3cDfDir/i3cd/.
+		docker build -t i3c/i3cd:$i3cVersion -t i3c/$1:latest $i3cDfDir/i3cd/.
 		;;
 	*)
 	if [ -f $i3cUdfDir/$1/i3c.json ]; then
