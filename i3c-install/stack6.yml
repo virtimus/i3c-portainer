@@ -1,4 +1,4 @@
-# 
+# export PWD_HOST_IP=$(ip -f inet -o addr show eth1 | awk '{print $4}'|sed 's:/[^/]*$::')
 version: '3'
 services:
   trigger:
