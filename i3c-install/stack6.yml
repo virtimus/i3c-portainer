@@ -3,5 +3,5 @@ version: '3'
 services:
   trigger:
     image: franela/dind
-    command: sh -c "cd / && mkdir /i3c && cd /i3c && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh > /log/bootstrap2.log && ./i3c/i3c-install/bs-kafka2.sh > /log/bs-kafka.log && tail -f /dev/null"
+    command: sh -c "if [ ! -f /log/bootstrap.log ]; then && cd / && mkdir /i3c && cd /i3c && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh > /log/bootstrap2.log && ./i3c/i3c-install/bs-kafka2.sh > /log/bs-kafka.log && fi && tail -f /dev/null"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock','/var/log:/log' ]
