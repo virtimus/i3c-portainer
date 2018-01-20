@@ -20,4 +20,5 @@ docker run -d --name $cName \
 #i3cpIp=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' i3cp);
 #export I3C_IP="$i3cpIp"
 #address=/dtb.h/192.168.3.136
-docker exec  i3cp sh -c "echo 'address=/$i3cHost/'\$(/sbin/ip route|awk '/default/ { print \$3 }') >> /etc/dnsmasq.conf"
+docker exec i3cp sh -c "echo 'address=/$i3cHost/'\$(/sbin/ip route|awk '/default/ { print \$3 }') >> /etc/dnsmasq.conf"
+docker exec i3cp sh -c "dnsmasq"

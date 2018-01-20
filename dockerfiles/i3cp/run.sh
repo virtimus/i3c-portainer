@@ -1,5 +1,5 @@
 #!/bin/bash
 
-dnsmasq
+#dnsmasq
 
 forego start -r
