@@ -32,16 +32,16 @@ echo "-------------------------"
 echo "/i rebuild i3cp ..."
 /i rebuild i3cp
 
+echo "-------------------------"
+echo "/i rerun i3cp ..."
+/i rerun i3cp 
+
 if [ ! "x$PWD_SESSION_ID" = "x" ]; then
   exHostIp=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' i3cp);
   exHostUrl='ip'$exHostIp'-'$PWD_SESSION_ID'-80.direct.labs.play-with-docker.com'
   echo 'exHostURL:'$exHostUrl
   exit 0
 fi
-
-echo "-------------------------"
-echo "/i rerun i3cp ..."
-/i rerun i3cp 
 
 echo "-------------------------"
 echo "/i rebuild i3cd ..."
