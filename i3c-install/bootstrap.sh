@@ -3,6 +3,7 @@ echo "------------------------------------------------------------------------"
 echo "Runing: i3c-install/bootstrap.sh ..."
 set
 echo "------------------------------------------------------------------------"
+/sbin/ip route
 CONTAINER=i3cd
 RUNNING=$(docker inspect --format="{{.State.Running}}" $CONTAINER 2> /dev/null)
 
