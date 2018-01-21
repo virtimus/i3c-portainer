@@ -19,6 +19,7 @@ services:
     environment:
       PWD_SESSION_ID: ${SESSION_ID}
       PWD_HOST_IP: ${PWD_HOST_IP}
+      PWD_HOST_FQDN: ${PWD_HOST_FQDN}
     image: franela/dind
     command: sh -c "cd / && mkdir /i3c && cd /i3c && git clone https://github.com/virtimus/i3c.git && ./i3c/i3c-install/bootstrap.sh >> /log/bootstrap.log 2>&1 && tail -f /dev/null"
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock','/var/log:/log' ]
