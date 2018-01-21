@@ -6,7 +6,7 @@ if [ ! -f $i3cHome/i3c.sh ]; then
     cd $i3cHome/.. 
     git clone https://github.com/virtimus/i3c.git
     
-    cd $i3cHome/i3c
+    cd i3c
     chmod -R a+x **/*.sh
 fi
 
