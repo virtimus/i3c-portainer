@@ -2,6 +2,14 @@
   <img title="i3c.Cloud" width="155px" height="55px" src="https://raw.githubusercontent.com/virtimus/i3c/develop/assets/images/i3c-logo-black.svg?sanitize=true">
 </p>
 
+i3c.Cloud is currently my personal R&D platform for quickly prototyping different software artifacts and making try and error experiments.
+
+The Principles are:
+
+- idea storage & reference
+- distribute elements as loosly coupled microservices
+- easy deploy, sharing & presentation of working solution prototypes
+
 ## Demo
 
 You can quickly deploy current develop version inside a "play-with-docker" (PWD) playground:
