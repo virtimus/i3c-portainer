@@ -37,12 +37,16 @@ echo "-------------------------"
 echo "/i rerun i3cp ..."
 /i rerun i3cp 
 
-if [ ! "x$PWD_SESSION_ID" = "x" ]; then
-  exHostIp=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' i3cp);
-  exHostUrl='ip'$exHostIp'-'$PWD_SESSION_ID'-80.direct.labs.play-with-docker.com'
-  echo 'exHostURL:'$exHostUrl
-  exit 0
-fi
+# unfotunatelly haven't found a way for automatic detecting docker host ip from env
+# the ip is needed to build pwd service external url
+# manually one can do this with:
+# export PWD_HOST_IP=$(ip -f inet -o addr show eth1 | awk '{print $4}'|sed 's:/[^/]*$::')
+#if [ ! "x$PWD_SESSION_ID" = "x" ]; then
+#  exHostIp=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' i3cp);
+#  exHostUrl='ip'$exHostIp'-'$PWD_SESSION_ID'-80.direct.labs.play-with-docker.com'
+#  echo 'exHostURL:'$exHostUrl
+#  exit 0
+#fi
 
 echo "-------------------------"
 echo "/i rebuild i3cd ..."
